@@ -2,7 +2,7 @@
  * ps2keypolled.h
  * Copyright 2009 by Bill Westfield
  *
- * defines for polled interface to PS2-like keybaords.
+ * defines for polled interface to PS2-like keyboards.
  */
 
 #ifdef __cplusplus
@@ -17,7 +17,12 @@ extern "C"{
 } // extern "C"
 #endif
 
-#include "WProgram.h"
+#if defined(ARDUINO) && ARDUINO >= 100
+    #include "Arduino.h"
+#else
+    #include "WProgram.h"
+#endif
+
 
 /*
  * Value to add to "extended" keycodes.  Can be 0x80 to fit in a singlpe
